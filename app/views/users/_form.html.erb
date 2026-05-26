@@ -1,0 +1,47 @@
+<%= form_with(model: user, local: true) do |f| %>
+
+  <% if user.errors.any? %>
+
+    <div>
+
+      <h2>
+        Ошибок: <%= user.errors.count %>
+      </h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+
+    </div>
+
+  <% end %>
+
+  <p>
+    <%= f.label :name, "Имя" %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :email, "Email" %><br>
+    <%= f.email_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password, "Пароль" %><br>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation,
+                "Подтверждение пароля" %><br>
+
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.submit "Создать аккаунт" %>
+  </p>
+
+<% end %>

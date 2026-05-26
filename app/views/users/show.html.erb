@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user %>
+
+<div>
+
+  <%= link_to t("profile.back"),
+      users_path %>
+
+  <% if signed_in? && current_user == @user %>
+
+    |
+
+    <%= link_to t("profile.edit"),
+        edit_user_path(@user) %>
+
+    |
+
+    <%= link_to t("profile.delete"),
+        @user,
+        data: {
+          turbo_method: :delete,
+          turbo_confirm: "Удалить аккаунт?"
+        } %>
+
+  <% end %>
+
+</div>

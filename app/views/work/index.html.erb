@@ -1,0 +1,107 @@
+<div class="work-area">
+
+  <div class="sidebar">
+
+    <h2><%= t("work.choose_theme") %></h2>
+
+    <%= form_with url: work_path,
+                  method: :get,
+                  local: true do |form| %>
+
+      <select id="theme-select" name="theme_id">
+
+        <option value="">
+          <%= t("work.choose_option") %>
+        </option>
+
+        <% @themes.each do |theme| %>
+
+          <option
+            value="<%= theme.id %>"
+            <%= "selected" if params[:theme_id].to_i == theme.id %>
+          >
+            <%= t("themes.#{theme.name}") %>
+          </option>
+
+        <% end %>
+
+      </select>
+
+      <br><br>
+
+      <%= form.submit t("work.show") %>
+
+    <% end %>
+
+  </div>
+
+  <div class="content">
+
+    <% if @selected_theme.present? %>
+
+      <div class="image-display">
+
+        <h2 id="image-name">
+          <%= t("cheeses.#{@current_image.name}") %>
+        </h2>
+
+        <img
+          id="main-image"
+          src="/pictures/<%= @current_image.file %>"
+          width="400"
+        >
+
+        <div class="rating-area">
+
+  <p>
+  <%= t("work.average_rating") %>:
+    <span id="average-rating">
+      <%= @average_value %>
+    </span>
+  </p>
+
+  <p>
+  <%= t("work.my_rating") %>:
+    <span id="my-rating">
+      <%= @my_value || "-" %>
+    </span>
+  </p>
+
+  <% if signed_in? %>
+
+    <div class="rating-buttons">
+
+      <% (1..5).each do |value| %>
+
+        <button
+          class="rate-button"
+          data-value="<%= value %>"
+          data-image-id="<%= @current_image.id %>"
+        >
+          <%= value %>
+        </button>
+
+      <% end %>
+
+    </div>
+
+  <% end %>
+
+</div>
+        <br><br>
+
+        <button type="button" id="prev-button">
+          ← <%= t("work.prev") %>
+        </button>
+
+        <button type="button" id="next-button">
+          <%= t("work.next") %> →
+        </button>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>

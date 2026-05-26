@@ -1,31 +1,69 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+
+  header:
+    home: "Home"
+    help: "Help"
+    contacts: "Contacts"
+    about: "About"
+    login: "Login"
+    logout: "Logout"
+    register: "Sign up"
+    profile: "Profile"
+
+  users:
+    users: "Users"
+    profile: "Profile"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back to users"
+    new_user: "New user"
+
+  work:
+    choose_theme: "Choose cheese category"
+    choose_option: "Choose category"
+    show: "Show"
+    next: "Next"
+    prev: "Back"
+    average_rating: "Average rating"
+    my_rating: "My rating"
+
+  themes:
+    semi_hard: "Semi-hard cheeses"
+    hard: "Hard cheeses"
+    soft: "Soft cheeses"
+
+  cheeses:
+    gouda: "Gouda"
+    edam: "Edam"
+    maasdam: "Maasdam"
+    tilsit: "Tilsit"
+    cheddar: "Cheddar"
+    parmesan: "Parmesan"
+    pecorino: "Pecorino"
+    grana_padano: "Grana Padano"
+    comte: "Comté"
+    emmental: "Emmental"
+    brie: "Brie"
+    camembert: "Camembert"
+    dorblu: "Dorblu"
+    ricotta: "Ricotta"
+    mozzarella: "Mozzarella"
+
+  pages:
+    help_title: "Help page"
+    help_text: "This application is designed to explore different types of cheeses, their categories, and characteristics. Users can browse cheese categories, view cheese images, rate them, switch the interface language, create an account, and log in. Use the menu at the top of the page for navigation."
+    contacts_title: "Contacts"
+    contacts_text: "Project developer: Student Silin Maxim, Group: 5140903/50401, Email: silin.ms@edu.spbstu.ru. For questions about the app and suggestions for improving the interface, contact via the email provided."
+    about_title: "About project"
+    about_text: "Experteese is a WEB application developed on Ruby on Rails as part of a course project for the discipline 'Methods of Modern Web Application Development'. The main goal of the app is to provide a convenient interface for users to view and rate different types of cheeses with multi-language support."
+    back_home: "Back to home"
+
+  profile:
+    name: "Name"
+    email: "Email"
+    back: "Back to users"
+    edit: "Edit"
+    delete: "Delete account"
+    
+  footer:
+    copyright: "Ruby on Rails Course Project"
