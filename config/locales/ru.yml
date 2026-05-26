@@ -17,6 +17,8 @@ ru:
     delete: "Удалить"
     back: "Вернуться к пользователям"
     new_user: "Новый пользователь"
+    password: "Пароль"
+    password_confirmation: "Подтверждение пароля"
 
   work:
     choose_theme: "Выбор категории сыра"

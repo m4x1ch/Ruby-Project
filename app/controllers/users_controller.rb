@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :set_user,
                 only: %i[ show edit update destroy ]
 
@@ -26,11 +25,9 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-
     @user = User.new(user_params)
 
     respond_to do |format|
-
       if @user.save
 
         format.html {
@@ -62,9 +59,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
-
     respond_to do |format|
-
       if @user.update(user_params)
 
         format.html {
@@ -97,11 +92,9 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
-
     @user.destroy!
 
     respond_to do |format|
-
       format.html {
         redirect_to users_path,
         notice: "Пользователь удалён.",
@@ -109,7 +102,6 @@ class UsersController < ApplicationController
       }
 
       format.json { head :no_content }
-
     end
   end
 
@@ -122,7 +114,6 @@ class UsersController < ApplicationController
 
     # Проверка владельца аккаунта
     def correct_user
-
       unless signed_in? && current_user == @user
 
         redirect_to root_path,
@@ -133,7 +124,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-
       params.expect(
         user: [
           :name,
@@ -143,5 +133,4 @@ class UsersController < ApplicationController
         ]
       )
     end
-
 end

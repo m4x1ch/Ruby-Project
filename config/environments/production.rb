@@ -91,5 +91,4 @@ Rails.application.configure do
   config.hosts.clear
 
 config.assets.compile = true
-
 end

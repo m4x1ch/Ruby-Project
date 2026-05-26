@@ -1,21 +1,36 @@
-<h1>Вход</h1>
+<h1><%= t("header.login") %></h1>
 
-<%= form_with scope: :session,
-              url: signin_path,
-              local: true do |f| %>
+<%= form_with(
+    scope: :session,
+    url: signin_path,
+    method: :post,
+    data: { turbo: false }
+  ) do |form| %>
 
-  <p>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </p>
+  <div>
 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
+    <%= form.label t("profile.email") %><br>
 
-  <p>
-    <%= f.submit "Войти" %>
-  </p>
+    <%= form.email_field :email %>
+
+  </div>
+
+  <br>
+
+  <div>
+
+    <%= form.label t("users.password") %><br>
+
+    <%= form.password_field :password %>
+
+  </div>
+
+  <br>
+
+  <div>
+
+    <%= form.submit t("header.login") %>
+
+  </div>
 
 <% end %>

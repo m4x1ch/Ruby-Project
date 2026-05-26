@@ -1,7 +1,5 @@
 module SessionsHelper
-
   def sign_in(user)
-
     remember_token = User.new_remember_token
 
     cookies.permanent[:remember_token] =
@@ -20,7 +18,6 @@ module SessionsHelper
   end
 
   def current_user
-
     remember_token =
       User.encrypt(cookies[:remember_token])
 
@@ -33,7 +30,6 @@ module SessionsHelper
   end
 
   def sign_out
-
     unless current_user.blank?
 
       current_user.update_attribute(
@@ -46,5 +42,4 @@ module SessionsHelper
       self.current_user = nil
     end
   end
-
 end

@@ -19,8 +19,6 @@
       <%= link_to t("header.profile"),
           current_user %> |
 
-      <%= gravatar_for(current_user) %> |
-
       <%= link_to t("header.logout"),
           signout_path,
           data: { turbo_method: :delete } %>

@@ -66,5 +66,15 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem 'active_model_serializers'
-gem 'activerecord-reset-pk-sequence'
+gem "active_model_serializers"
+gem "activerecord-reset-pk-sequence"
+
+group :development, :test do
+  gem "simplecov", require: false
+
+  gem "brakeman", require: false
+
+  gem "bundler-audit", require: false
+
+  gem "rubocop", require: false
+end

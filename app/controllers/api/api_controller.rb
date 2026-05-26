@@ -1,9 +1,7 @@
 class Api::ApiController < ApplicationController
-
     before_action :set_locale
 
   def next_image
-
     images =
       Image.where(theme_id: params[:theme_id])
 
@@ -30,11 +28,9 @@ class Api::ApiController < ApplicationController
       average: average,
       my_value: my_value
     }
-
   end
 
   def prev_image
-
     images =
       Image.where(theme_id: params[:theme_id])
 
@@ -62,11 +58,9 @@ class Api::ApiController < ApplicationController
       average: average,
       my_value: my_value
     }
-
   end
 
   def rate_image
-
     image =
       Image.find(params[:image_id])
 
@@ -87,7 +81,5 @@ class Api::ApiController < ApplicationController
       average: average,
       my_value: value.value
     }
-
   end
-
 end

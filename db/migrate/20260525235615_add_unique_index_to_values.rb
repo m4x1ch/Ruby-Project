@@ -1,11 +1,7 @@
 class AddUniqueIndexToValues < ActiveRecord::Migration[8.1]
-
   def change
-
     add_index :values,
-      [:user_id, :image_id],
+      [ :user_id, :image_id ],
       unique: true
-
   end
-
 end

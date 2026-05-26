@@ -1,47 +1,71 @@
-<%= form_with(model: user, local: true) do |f| %>
+<%= form_with(model: user) do |form| %>
 
   <% if user.errors.any? %>
 
-    <div>
+    <div style="color: red">
 
       <h2>
-        Ошибок: <%= user.errors.count %>
+        <%= pluralize(user.errors.count, "error") %>
       </h2>
 
       <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+
+        <% user.errors.each do |error| %>
+
+          <li><%= error.full_message %></li>
+
         <% end %>
+
       </ul>
 
     </div>
 
   <% end %>
 
-  <p>
-    <%= f.label :name, "Имя" %><br>
-    <%= f.text_field :name %>
-  </p>
+  <div>
 
-  <p>
-    <%= f.label :email, "Email" %><br>
-    <%= f.email_field :email %>
-  </p>
+    <%= form.label t("profile.name") %><br>
 
-  <p>
-    <%= f.label :password, "Пароль" %><br>
-    <%= f.password_field :password %>
-  </p>
+    <%= form.text_field :name %>
 
-  <p>
-    <%= f.label :password_confirmation,
-                "Подтверждение пароля" %><br>
+  </div>
 
-    <%= f.password_field :password_confirmation %>
-  </p>
+  <br>
 
-  <p>
-    <%= f.submit "Создать аккаунт" %>
-  </p>
+  <div>
+
+    <%= form.label t("profile.email") %><br>
+
+    <%= form.email_field :email %>
+
+  </div>
+
+  <br>
+
+  <div>
+
+    <%= form.label t("users.password") %><br>
+
+    <%= form.password_field :password %>
+
+  </div>
+
+  <br>
+
+  <div>
+
+    <%= form.label t("users.password_confirmation") %><br>
+
+    <%= form.password_field :password_confirmation %>
+
+  </div>
+
+  <br>
+
+  <div>
+
+    <%= form.submit t("header.register") %>
+
+  </div>
 
 <% end %>

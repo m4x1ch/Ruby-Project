@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
   scope "(:locale)", locale: /en|ru/ do
-
     resources :values
     resources :images
     resources :themes
@@ -17,7 +15,6 @@ Rails.application.routes.draw do
     get "work", to: "work#index"
 
     namespace :api do
-
       get "next_image",
         to: "api#next_image"
 
@@ -26,7 +23,6 @@ Rails.application.routes.draw do
 
       post "rate_image",
         to: "api#rate_image"
-
     end
 
     get "/signin",
@@ -37,7 +33,5 @@ Rails.application.routes.draw do
 
     delete "/signout",
       to: "sessions#destroy"
-
   end
-
 end

@@ -1,5 +1,4 @@
 class WorkController < ApplicationController
-
   def index
     @themes = Theme.all
 
@@ -19,5 +18,4 @@ class WorkController < ApplicationController
       @images = []
     end
   end
-
 end
