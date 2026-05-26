@@ -89,5 +89,7 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.hosts.clear
-  
+
+config.assets.compile = true
+
 end
